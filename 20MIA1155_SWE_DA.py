@@ -5,10 +5,14 @@ root=Tk()
 root.title("Check Availability")
 root.geometry("1350x700+0+0")
 root.config(bg="blue")
-image=Image.open(r'https://github.com/utkarsh-aryan/Datasets-for-projects/blob/89ff964ab02d6ead9cd0eeda594965ff96094167/E-s42MaVgAAahX_.jpeg')
+url1 = 'https://raw.githubusercontent.com/utkarsh-aryan/Datasets-for-projects/main/E-s42MaVgAAahX_.jpeg'
+response1 = requests.get(url1)
+image=Image.open(BytesIO(response1.content))
 backgroundimage=ImageTk.PhotoImage(image)
 imagelabel1=Label(root, image=backgroundimage).place(x=0, y=0, relwidth=1, relheight=1)
-aboveimage=Image.open(r'https://github.com/utkarsh-aryan/Datasets-for-projects/blob/5366d92aab03d723d968403249273c7579994594/Easy-Fish-Tacos-with-the-Best-Fish-Taco-Sauce-4.jpg')
+url2 = 'https://raw.githubusercontent.com/utkarsh-aryan/Datasets-for-projects/main/Easy-Fish-Tacos-with-the-Best-Fish-Taco-Sauce-4.jpg'
+response2 = requests.get(url2)
+aboveimage=Image.open(BytesIO(response2.content))
 abimage=ImageTk.PhotoImage(aboveimage)
 imagelabel=Label(root, image=abimage).place(x=200, y=120, width=400, height=500)
 
